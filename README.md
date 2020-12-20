@@ -23,5 +23,5 @@ npm test
 
 ## Contact
 
-[facebook]: https://web.facebook.com/lucasnunes.lbn
-[linkedin]: https://www.linkedin.com/in/lucasnunes-lbn/
+ https://web.facebook.com/lucasnunes.lbn/  
+ https://www.linkedin.com/in/lucasnunes-lbn/
