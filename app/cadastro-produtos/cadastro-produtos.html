@@ -1,0 +1,56 @@
+<table width="500">
+    <thead>
+   		<tr>
+        	<td></td>
+        	<td>
+            	Descrição
+            </td>
+        	<td>
+           	 	Preço
+            </td>
+            <td>
+           	 	Promoção
+            </td>
+            <td>
+            </td>
+        </tr>
+    	<tr>
+        	<td> </td>
+        	<td>
+            	<input ng-model="novocadastro.descricao" type="text"  />
+            </td>
+        	<td>
+           	 	<input type="number" ng-model="novocadastro.preco"  />
+            </td>
+            <td>
+           	 	<select  ng-model="novocadastro.listpromocao" ng-options="item.descricao for item in promocoes" />
+            </td>
+            <td>
+           	 	<button ng-click="incluir()">Incluir</button>
+            </td>
+        </tr>
+        <tr><td colspan="5">&nbsp;</td></tr>
+		<tr>
+        	<td><strong>ID</strong></td>
+            <td><strong>Descrição</strong></td>
+            <td><strong>Preço</strong></td>
+            <td><strong>Promoção atual</strong></td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+    	<tr  ng-repeat="item in produtos track by $index" >
+        	<td>{{item.id}}</td>
+            <td><input ng-model="item.descricao" ng-change="salvarBD()" value="{{item.descricao}}" /></td>
+            <td><input ng-model="item.preco" ng-change="salvarBD()" value="{{item.preco}}" /></td>
+            <td><select  ng-model="item.promocao" ng-change="salvarBD()" ng-options="item.descricao for item in promocoes track by item.id" /></td>
+            <td><button ng-click="remove($index)">Excluir</button></td>
+        </tr>
+    </tbody>   
+</table>
+
+<h2>Array com os produtos atualmente registrados no BD local </h2>
+<div style='margin-bottom: 10px;'>{{produtos}}</div>
+
+<h2>Array com as promoções  atualmente registradas no BD local </h2>
+<div style='margin-bottom: 10px;'>{{produtos}}</div>
