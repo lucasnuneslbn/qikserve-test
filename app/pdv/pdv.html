@@ -1,0 +1,75 @@
+<table width="500">
+    <thead>
+   		<tr>
+        	<td></td>
+            <td></td>
+        	<td>
+            	Qtd.
+            </td>
+        	<td>
+           	 	Produto
+            </td>
+            <td>
+            </td>
+        </tr>
+    	<tr>
+        	<td></td>
+            <td></td>
+        	<td>
+            	<input ng-model="pdv.qtd" type="number" value="1" min="1" max="99" />
+            </td>
+        	<td>
+           	 	<select  ng-model="pdv.listproduto" ng-options="item.descricao for item in produtos" />
+            </td>
+            <td>
+           	 	<button ng-click="incluirProduto()">Incluir</button>
+            </td>
+        </tr>
+        <tr>
+        	<td colspan="5">&nbsp;</td>
+        </tr>
+<tr>
+        	<td><strong>Nr.</strong></td>
+            <td><strong>Desc.</strong></td>
+            <td><strong>Qtd</strong></td>
+            <td><strong>Subtotal</strong></td>
+            <td><strong>Desconto</strong></td>
+        </tr>
+        
+    </thead>
+    <tbody>
+    	<tr  ng-repeat="item in itensPdv" >
+        	<td>{{item.nr}}</td>
+            <td>{{item.descricao}}</td>
+            <td>{{item.qtd}}</td>
+            <td>{{item.preco}}</td>
+            <td>{{item.desconto}}</td>
+        </tr>
+    </tbody>
+    <tfoot>
+    	<tr>
+        	<td colspan="5">&nbsp;</td>
+        </tr>
+        <tr>
+        	<td colspan="5">&nbsp;</td>
+        </tr>
+    	<tr>
+        	<td colspan="4" align="right"><strong>Total:</strong></td>
+            <td>{{pdv.total}}</td>
+        </tr>
+        <tr>
+        	<td colspan="4" align="right"><strong>Descontos:</strong></td>
+            <td>{{pdv.descontos}}</td>
+        </tr>
+         <tr>
+        	<td colspan="4" align="right"><strong>Total à pagar:</strong></td>
+            <td>{{pdv.totalAPagar}}</td>
+        </tr>
+ 
+    </tfoot>
+</table>
+
+<h2>Promoções ativas</h2>
+<p ng-repeat="promocao in pdv.promocoes">
+	<b  ng-if="promocao.ativa == true">{{promocao.descricao}} - QtdMin: {{promocao.qtdMin}} - Desconto: {{promocao.porcentagem_desconto}}%</b><br />
+</p>

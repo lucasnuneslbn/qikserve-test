@@ -10,7 +10,9 @@ module.exports = function(config) {
       '../node_modules/angular-mocks/angular-mocks.js',
       'core/**/*.js',
       'view*/**/*.js',
-	  'pdv/*.js'
+	  'pdv/*.js',
+	  'cadastro-produtos/*.js',
+	  'cadastro-promocoes/*.js',
     ],
 
     autoWatch: true,
